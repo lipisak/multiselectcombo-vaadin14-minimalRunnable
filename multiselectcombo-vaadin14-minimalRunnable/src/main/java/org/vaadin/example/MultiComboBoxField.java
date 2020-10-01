@@ -46,7 +46,6 @@ public class MultiComboBoxField<T> extends CustomField<List<T>> {
 	}
 	
 	private void initComboBox() {
-		comboBox.setOrdered(true);
 		comboBox.addValueChangeListener(e -> {
 			if (ignoreValueChange) return;
             
@@ -58,7 +57,6 @@ public class MultiComboBoxField<T> extends CustomField<List<T>> {
 		});
 		comboBox.setItemLabelGenerator(item -> Optional.ofNullable(item).map(Object::toString).orElse(StringUtils.EMPTY));
 		comboBox.setWidthFull();
-		comboBox.setOrdered(true);
 	}
 	
 	@Override
@@ -97,8 +95,8 @@ public class MultiComboBoxField<T> extends CustomField<List<T>> {
 		return this;
 	}
 	
-	public MultiComboBoxField<T> withOutputValueSorting(boolean sort) {
-		comboBox.setOrdered(sort);
+	public MultiComboBoxField<T> withOrdered(boolean ordered) {
+		comboBox.setOrdered(ordered);
 		return this;
 	}
 

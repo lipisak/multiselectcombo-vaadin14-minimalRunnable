@@ -32,6 +32,7 @@ public class MainView extends VerticalLayout {
         field.withItemCaptionGenerator(translations::get);
         field.setValue(List.of("MONDAY", "TUESDAY", "WEDNESDAY"));
         field.setWidthFull();
+        field.withOrdered(true);
 
         addAndExpand(field);
     }
